@@ -1,4 +1,5 @@
 brew "bat"
+brew "cmatrix"
 brew "docker"
 brew "eza"
 brew "git"
