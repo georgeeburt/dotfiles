@@ -1,0 +1,29 @@
+---
+# Metadata
+name: 'GB Min Terminal'
+author: 'George Burt'
+
+accent: '#A18AE6'
+background: '#2a2a2a'
+details: darker
+foreground: '#C8C8C8'
+terminal_colors:
+  bright:
+    black: '#5A5A5A'
+    red: '#D97A7A'
+    green: '#A8C47F'
+    yellow: '#E6C27A'
+    blue: '#8FA8E6'
+    magenta: '#C18AE6'
+    cyan: '#7AD9D9'
+    white: '#E0E0E0'
+
+  normal:
+    black: '#2A2A2A'
+    red: '#ff8c26'
+    green: '#b0ff41'
+    yellow: '#ff7c08'
+    blue: '#7e55ff'
+    magenta: '#B07FD9'
+    cyan: '#6433ff'
+    white: '#C8C8C8'
