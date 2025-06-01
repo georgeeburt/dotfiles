@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "Running yadm bootstrap... 🛠️"
+
+if ! command -v git >/dev/null 2>&1; then
+  echo "⚠️ Git is not installed. Please run: brew install git"
+  exit 1
+fi
+
+# --- Load Homebrew env
+eval "$(/opt/homebrew/bin/brew shellenv)" || eval "$(/usr/local/bin/brew shellenv)"
+
+# --- Ensure Brewfile config directory exists
+mkdir -p "$HOME/.config/brew"
+
+# ---  Brew Bundle
+BREWFILE="$HOME/.config/brew/.Brewfile"
+
+if [[ -f "$BREWFILE" ]]; then
+  echo "📦 Installing Brew packages from Brewfile..."
+  brew bundle --file="$BREWFILE"
+else
+  echo "⚠️ No Brewfile found at $BREWFILE — skipping brew bundle..."
+fi
+
+# --- Re-dump Brewfile to keep it current
+brew bundle dump --file="$BREWFILE" --force 
+
+echo "Bootstrap complete ✅"
