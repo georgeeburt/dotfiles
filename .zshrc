@@ -2,3 +2,4 @@
 
 # Load Starship
 eval "$(starship init zsh)"
+eval "$(pyenv init -)"

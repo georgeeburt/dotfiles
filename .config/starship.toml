@@ -1,7 +1,8 @@
 # ~/.config/starship.toml
 
 "$schema" = 'https://starship.rs/config-schema.json'
-format = """$os$username$hostname$kubernetes$directory$git_branch$nodejs$python"""
+format = """
+$os$username$hostname$kubernetes$directory$git_branch$nodejs$rust$python"""
 
 # Drop ugly default prompt chars
 [character]
@@ -25,12 +26,11 @@ home_symbol = ' ~'
 read_only_style = '197'
 read_only = ''
 format = 'at [$path]($style)[$read_only]($read_only_style) '
+truncation_symbol = '…/'
 
 [git_branch]
 symbol = ' '
 format = 'via [$symbol$branch]($style) '
-# truncation_length = 4
-truncation_symbol = '…/'
 style = 'bold #FFA500'
 
 [username]
@@ -40,5 +40,17 @@ style_root = 'black bold'
 format = '[$user]($style) '
 show_always = true
 
+[hostname]
+ssh_only = false
+format = 'on [$hostname](bold green) '
+disabled = false
+
 [nodejs]
 symbol = ' '
+
+[python]
+symbol = ''
+
+[rust]
+format = 'via [${symbol} (${version} )]($style)'
+symbol = ''
