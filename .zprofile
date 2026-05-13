@@ -12,5 +12,12 @@ PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
 
 export PATH
 
-# OrbStack
-source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+# Solana
+export PATH="/Users/georgeb/.local/share/solana/install/active_release/bin:$PATH"
+
+# Added by Toolbox App
+export PATH="$PATH:/Users/georgeb/Library/Application Support/JetBrains/Toolbox/scripts"
+
+# Volta
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
